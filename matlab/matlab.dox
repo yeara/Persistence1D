@@ -1,0 +1,101 @@
+/*!\page MatlabInterface Interface to Matlab
+
+\section Matlab Folder Contents
+
+The Matlab folder cotains: 
+- run_persistence1d.cpp - C++/Matlab interface for Persistence1D.
+- \ref persistence1d_example.m - detailed walk-through of using Persistence1D class via Matlab
+- \ref persistence1d_example_sine.m - another example
+- Three general use scripts: 
+	-# filter_features_by_persistence.m
+	-# visualize_features.m
+	-# plot_data_with_features.m
+
+See also the examples \ref persistence1d_example.m and \ref persistence1d_example_sine.m
+as well as the documentation for run_persistence1d.cpp.
+
+\section comp Compiling with Mex
+To compile with Mex, change the working directory to [persistence_base_directory]\\matlab and run: mex run_persistence1d.cpp
+ 
+\subsection conf Configuring Mex
+-# If this is the first time you're using Mex run: mex -setup to setup the compiler. 
+-# Answer yes when mex would like to locate installed compilers. 
+-# Choose Microsoft Visual C++ from the compiler list. Persistence1D does not support the Lcc-win23 supplied with Matlab. (Note: Matlab auto-detects Microsoft Visual Studio compilers up to the Matlab's release year) 
+-# Answer yes again to set the compiler.
+ 
+\section usage Using Persistence1D with Matlab
+
+\code
+[MinIndices MaxIndices Persistence GlobalMinIdx GlobalMinVal] = run_persistence1d(single(data))
+\endcode
+
+Input and output format must adhere to this specified format.
+
+@param[in]  data 	A vector of data, sorted according to coordinates.
+					This should contain only data values to be sorted.
+					Assumes the data is one dimensional. 
+					Data format MUST be single. 
+@param[out] MinIndices			Vector of (Matlab compatible) indices of local maxima.
+@param[out] MaxIndices			Vector of (Matlab compatible) indices of local minima.
+@param[out] Persistence         Vector of persistence of the paired extrema whose indices live in 
+								MinIndices and MaxIndices
+@param[out] GlobalMinIdx		Index (Matlab compatible) of global minimum.
+@param[out] GlobalMinVal		Value of global minimum.
+
+
+\section supp Supplementary  Scripts
+\subsection vis visualize_features(datafilename, resfilename)
+This script is used to display results of Persistence1D runs which were saved to text files. 
+
+@param[in] data_file		Name of the file which contains the raw data Persistence1D was 
+							run on, one value per row.
+@param[in] res_file 		A file with all indices of extrema to display. Assumes 
+							Matlab-compatible indexing.
+
+\subsection plot plot_data_with_features(data, indices)
+Creates a plot with markers at extrema specified by indices
+
+@param[in] data			One dimensional data vector.
+@param[in] indices 		One dimensional vector of indices (integer) values, all must be 
+						greater than 0 and less than  or equal to the number of elemenets in data
+
+\subsection filt filter_features_by_persistence(min, max, persistence, threshold)
+Returns a 3-column matrix [minIndex maxIndex persistence]
+of paired extrema whose persistence is greater than threshold
+
+@param[in] min				Vector of indices of minima.
+@param[in] max				Vector of indices of maxima 
+@param[in] persistence		Vector of persistence of paired extrema. 
+@param[in] threshold 			Persistence threshold for filtering
+@param[out] filtered_pairs		Returns a matrix with all pairs whose persistence > threshold.
+
+ */
+
+
+/*! \example persistence1d_example.m
+
+   Demonstrates how to use the Persistence1D class in Matlab.
+   This example demonstates the following:
+   1. Compiling run_persistence1d
+   2. Input and output parameters and formats for run_persistence1d
+   3. C++/Matlab interface function calling convention
+   4. Different methods for filtering paired extrema:
+       - Logical indexing
+       - Supplied script filter_features_by_persistence
+   5. Plotting results
+       - Manually
+       - With supplied script plot_data_with_features
+
+   Known Issues:
+   Pairs structure needs to be transposed manually. 
+
+    # Code Documentation
+*/
+
+ /*! \example persistence1d_example_sine.m
+
+   Demonstrates how to use the Persistence1D class in Matlab and filter/print the results.
+
+    # Code Documentation
+*/
+

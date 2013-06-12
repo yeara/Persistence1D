@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "persistence1d", "persistence1d\persistence1d.vcxproj", "{2A3AA9EB-752C-44D0-8A4C-5F762DF6008F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tests", "tests\tests.vcxproj", "{9F2020B9-AC54-4365-9393-1AE90E701E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{ACDD8633-8BDD-4A5B-9E61-54CCEFABB7E7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FilesAndFilters", "examples\FilesAndFilters\FilesAndFilters.vcxproj", "{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatlabVisualization", "examples\MatlabVisualization\MatlabVisualization.vcxproj", "{7FB04568-B0DB-4DBE-B7BA-2D1779349350}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleDataVector", "examples\SimpleDataVector\SimpleDataVector.vcxproj", "{28B054E8-FB4F-44FB-9922-761487C8E65B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A3AA9EB-752C-44D0-8A4C-5F762DF6008F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2A3AA9EB-752C-44D0-8A4C-5F762DF6008F}.Debug|Win32.Build.0 = Debug|Win32
+		{2A3AA9EB-752C-44D0-8A4C-5F762DF6008F}.Release|Win32.ActiveCfg = Release|Win32
+		{2A3AA9EB-752C-44D0-8A4C-5F762DF6008F}.Release|Win32.Build.0 = Release|Win32
+		{9F2020B9-AC54-4365-9393-1AE90E701E96}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F2020B9-AC54-4365-9393-1AE90E701E96}.Debug|Win32.Build.0 = Debug|Win32
+		{9F2020B9-AC54-4365-9393-1AE90E701E96}.Release|Win32.ActiveCfg = Release|Win32
+		{9F2020B9-AC54-4365-9393-1AE90E701E96}.Release|Win32.Build.0 = Release|Win32
+		{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B}.Debug|Win32.Build.0 = Debug|Win32
+		{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B}.Release|Win32.ActiveCfg = Release|Win32
+		{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B}.Release|Win32.Build.0 = Release|Win32
+		{7FB04568-B0DB-4DBE-B7BA-2D1779349350}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FB04568-B0DB-4DBE-B7BA-2D1779349350}.Debug|Win32.Build.0 = Debug|Win32
+		{7FB04568-B0DB-4DBE-B7BA-2D1779349350}.Release|Win32.ActiveCfg = Release|Win32
+		{7FB04568-B0DB-4DBE-B7BA-2D1779349350}.Release|Win32.Build.0 = Release|Win32
+		{28B054E8-FB4F-44FB-9922-761487C8E65B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28B054E8-FB4F-44FB-9922-761487C8E65B}.Debug|Win32.Build.0 = Debug|Win32
+		{28B054E8-FB4F-44FB-9922-761487C8E65B}.Release|Win32.ActiveCfg = Release|Win32
+		{28B054E8-FB4F-44FB-9922-761487C8E65B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4212D88-CD09-40B7-AE89-4D0AA71AFB3B} = {ACDD8633-8BDD-4A5B-9E61-54CCEFABB7E7}
+		{7FB04568-B0DB-4DBE-B7BA-2D1779349350} = {ACDD8633-8BDD-4A5B-9E61-54CCEFABB7E7}
+		{28B054E8-FB4F-44FB-9922-761487C8E65B} = {ACDD8633-8BDD-4A5B-9E61-54CCEFABB7E7}
+	EndGlobalSection
+EndGlobal

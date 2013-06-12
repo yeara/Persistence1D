@@ -1,0 +1,27 @@
+Persistence: 4.0834 minimum index: 24 maximum index: 26
+Persistence: 5.0702 minimum index: 4 maximum index: 3
+Persistence: 6.0453 minimum index: 8 maximum index: 7
+Persistence: 7.23711 minimum index: 16 maximum index: 18
+Persistence: 11.4078 minimum index: 12 maximum index: 10
+Persistence: 14.191 minimum index: 1 maximum index: 13
+Persistence: 17.2486 minimum index: 28 maximum index: 22
+Global minimum value: -8.1518 index: 21
+
+Filtered results with persistence > 10.666
+Persistence: 11.4078 minimum index: 12 maximum index: 10
+Persistence: 14.191 minimum index: 1 maximum index: 13
+Persistence: 17.2486 minimum index: 28 maximum index: 22
+Global minimum value: -8.1518 index: 21
+
+PrintResults(filterThreshold) results:
+Persistence: 11.4078 minimum index: 12 maximum index: 10
+Persistence: 14.191 minimum index: 1 maximum index: 13
+Persistence: 17.2486 minimum index: 28 maximum index: 22
+Global minimum value: -8.1518 index: 21
+
+Filtered results with persistence > 18.2486
+Number of found paired extrema: 0
+PrintPairs(pairs) start
+PrintPairs(pairs) end
+
+Global minimum value: -8.1518 index: 21
