@@ -93,23 +93,6 @@ struct TPairedExtrema
 };
 
 
-/*!
-	Prints the contents of the TPairedExtrema vector.
-	If called directly with a TPairedExtrema vector, the global minimum is not printed.
-
-	@param[in] pairs	Vector of pairs to be printed. 
-*/	
-void PrintPairs(const std::vector<TPairedExtrema> pairs) 
-{
-	for (std::vector<TPairedExtrema>::const_iterator it = pairs.begin(); 
-		it != pairs.end(); it++)
-	{
-		std::cout	<< "Persistence: " << (*it).Persistence
-					<< " minimum index: " << (*it).MinIndex
-					<< " maximum index: " << (*it).MaxIndex
-					<< std::endl;
-	}
-}
 
 /*! Finds extrema and their persistence in one-dimensional data.
 
@@ -158,6 +141,26 @@ public:
 		VerifyAliveComponents();	
 #endif
 		return true;
+	}
+
+
+
+	/*!
+		Prints the contents of the TPairedExtrema vector.
+		If called directly with a TPairedExtrema vector, the global minimum is not printed.
+
+		@param[in] pairs	Vector of pairs to be printed. 
+	*/	
+	void PrintPairs(const std::vector<TPairedExtrema>& pairs) const 
+	{
+		for (std::vector<TPairedExtrema>::const_iterator it = pairs.begin(); 
+			it != pairs.end(); it++)
+		{
+			std::cout	<< "Persistence: " << (*it).Persistence
+						<< " minimum index: " << (*it).MinIndex
+						<< " maximum index: " << (*it).MaxIndex
+						<< std::endl;
+		}
 	}
 
 	/*!

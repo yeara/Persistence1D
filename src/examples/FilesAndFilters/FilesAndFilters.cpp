@@ -87,7 +87,7 @@ int main()
 	cout << "Filtered results with persistence > " << filterThreshold << endl;
 
 	//To print the results, it is also possible to print the contents of the local pairs structure
-	PrintPairs(pairs);
+	p.PrintPairs(pairs);
 
 	//In this case, the global minimum needs to be printed manually
 	cout << "Global minimum value: " << globalMinValue 
@@ -108,7 +108,7 @@ int main()
 
 	//Trying to print the results using the local pairs structure via PrintPairs will not print anything
 	cout << "PrintPairs(pairs) start" << endl;
-	PrintPairs(pairs);
+	p.PrintPairs(pairs);
 	cout << "PrintPairs(pairs) end" << endl << endl;
 
 	//But calling the class's PrintPairs will print the global minimum even when no 
