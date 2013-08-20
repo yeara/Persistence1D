@@ -117,8 +117,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">Filtered results with persistence &gt; 18.2486</div>
 <div class="line">Number of found paired extrema: 0</div>
-<div class="line"><a name="a0"></a><a class="code" href="namespacep1d.html#a642a9d7b504590eada243696f2991419" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs) start</div>
-<div class="line"><a class="code" href="namespacep1d.html#a642a9d7b504590eada243696f2991419" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs) end</div>
+<div class="line">PrintPairs(pairs) start</div>
+<div class="line">PrintPairs(pairs) end</div>
 <div class="line"></div>
 <div class="line">Global minimum value: -8.1518 index: 21</div>
 </div><!-- fragment --><h1>Code Documentation</h1>
@@ -152,10 +152,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span>p1d;</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a name="a1"></a><a class="code" href="_files_and_filters_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="_files_and_filters_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">//Declare class and input variables</span></div>
-<div class="line">    <a name="_a2"></a><a class="code" href="classp1d_1_1_persistence1_d.html" title="Finds extrema and their persistence in one-dimensional data.">Persistence1D</a> p;</div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classp1d_1_1_persistence1_d.html" title="Finds extrema and their persistence in one-dimensional data.">Persistence1D</a> p;</div>
 <div class="line">    vector&lt;float&gt; data;</div>
 <div class="line">    <span class="keywordtype">float</span> currdata; </div>
 <div class="line">    ifstream datafile;</div>
@@ -185,18 +185,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    datafile.close();</div>
 <div class="line">            </div>
 <div class="line">    <span class="comment">//Find extrema and compute their persistence.</span></div>
-<div class="line">    p.<a name="a3"></a><a class="code" href="classp1d_1_1_persistence1_d.html#afa9e076d614ac0f0e8dd7e63b1c81868" title="Call this function with a vector of one dimensional data to find extrema features in the data...">RunPersistence</a>(data);</div>
+<div class="line">    p.<a name="a2"></a><a class="code" href="classp1d_1_1_persistence1_d.html#afa9e076d614ac0f0e8dd7e63b1c81868" title="Call this function with a vector of one dimensional data to find extrema features in the data...">RunPersistence</a>(data);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//Use the Get functions to get a copy of the results. </span></div>
 <div class="line">    <span class="comment">//You can use this function multiple times with multiple threshold values without re-running the </span></div>
 <div class="line">    <span class="comment">//main algorithm. </span></div>
-<div class="line">    p.<a name="a4"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a9044a1a04579ae6d5aa372d7aa0fe59b" title="Use this method to get two vectors with all indices of PairedExterma.">GetExtremaIndices</a>(min, max);</div>
-<div class="line">    p.<a name="a5"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a14e323588713b201a1e5a8e4d5925d83" title="Use this method to get the results of RunPersistence.">GetPairedExtrema</a>(pairs);</div>
-<div class="line">    globalMinValue = p.<a name="a6"></a><a class="code" href="classp1d_1_1_persistence1_d.html#aa8ba28c82b8f0d3991ec2d30fc6a77d5" title="Returns the value of the global minimum.">GetGlobalMinimumValue</a>();</div>
-<div class="line">    globalMinIndex = p.<a name="a7"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a404b4ec1a3f9d16200ce6e22cb4be0b4" title="Returns the index of the global minimum.">GetGlobalMinimumIndex</a>();</div>
+<div class="line">    p.<a name="a3"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a9044a1a04579ae6d5aa372d7aa0fe59b" title="Use this method to get two vectors with all indices of PairedExterma.">GetExtremaIndices</a>(min, max);</div>
+<div class="line">    p.<a name="a4"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a14e323588713b201a1e5a8e4d5925d83" title="Use this method to get the results of RunPersistence.">GetPairedExtrema</a>(pairs);</div>
+<div class="line">    globalMinValue = p.<a name="a5"></a><a class="code" href="classp1d_1_1_persistence1_d.html#aa8ba28c82b8f0d3991ec2d30fc6a77d5" title="Returns the value of the global minimum.">GetGlobalMinimumValue</a>();</div>
+<div class="line">    globalMinIndex = p.<a name="a6"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a404b4ec1a3f9d16200ce6e22cb4be0b4" title="Returns the index of the global minimum.">GetGlobalMinimumIndex</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//To print the results - including all pairs and the global minimum, call PrintResults. </span></div>
-<div class="line">    p.<a name="a8"></a><a class="code" href="classp1d_1_1_persistence1_d.html#aa323a59d0c95bb6e0e1037a4f89e5c65" title="Prints the global minimum and all paired extrema whose persistence is greater or equal to threshold...">PrintResults</a>();</div>
+<div class="line">    p.<a name="a7"></a><a class="code" href="classp1d_1_1_persistence1_d.html#aa323a59d0c95bb6e0e1037a4f89e5c65" title="Prints the global minimum and all paired extrema whose persistence is greater or equal to threshold...">PrintResults</a>();</div>
 <div class="line">    cout &lt;&lt; endl;</div>
 <div class="line">        </div>
 <div class="line">    <span class="comment">//Now set a threshold for features filtering</span></div>
@@ -211,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Filtered results with persistence &gt; &quot;</span> &lt;&lt; filterThreshold &lt;&lt; endl;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//To print the results, it is also possible to print the contents of the local pairs structure</span></div>
-<div class="line">    <a class="code" href="namespacep1d.html#a642a9d7b504590eada243696f2991419" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs);</div>
+<div class="line">    p.<a name="a8"></a><a class="code" href="classp1d_1_1_persistence1_d.html#a830075de31a6051275d518775e7de92c" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//In this case, the global minimum needs to be printed manually</span></div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Global minimum value: &quot;</span> &lt;&lt; globalMinValue </div>
@@ -232,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">//Trying to print the results using the local pairs structure via PrintPairs will not print anything</span></div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;PrintPairs(pairs) start&quot;</span> &lt;&lt; endl;</div>
-<div class="line">    <a class="code" href="namespacep1d.html#a642a9d7b504590eada243696f2991419" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs);</div>
+<div class="line">    p.<a class="code" href="classp1d_1_1_persistence1_d.html#a830075de31a6051275d518775e7de92c" title="Prints the contents of the TPairedExtrema vector.">PrintPairs</a>(pairs);</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;PrintPairs(pairs) end&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//But calling the class&#39;s PrintPairs will print the global minimum even when no </span></div>
@@ -244,7 +244,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 12 2013 23:54:41 for Persistence1D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 20 2013 14:09:06 for Persistence1D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
