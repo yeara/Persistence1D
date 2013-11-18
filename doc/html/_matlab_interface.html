@@ -155,14 +155,34 @@ filter_features_by_persistence(min, max, persistence, threshold)</h2>
     <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Vector of indices of maxima </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">persistence</td><td>Vector of persistence of paired extrema. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>Persistence threshold for filtering </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">filtered_pairs</td><td>Returns a matrix with all pairs whose persistence &gt; threshold. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">filtered_pairs</td><td>Returns a matrix with all pairs whose persistence &gt; threshold.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="get_min"></a>
+get_max_indices(pairs)</h2>
+<p>Returns a vector with the indices of paired minima in a pairs matrix.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pairs</td><td>Paired extrema matrix, as per filter_features_by_persistence output. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">idx</td><td>Vector with minima indices.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="get_min"></a>
+get_max_indices(pairs)</h2>
+<p>Returns a vector with the indices of paired maxima in a pairs matrix.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pairs</td><td>Paired extrema matrix, , as per filter_features_by_persistence output. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">idx</td><td>Vector with maxima indices. </td></tr>
   </table>
   </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 20 2013 14:09:06 for Persistence1D by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 18 2013 19:57:09 for Persistence1D by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

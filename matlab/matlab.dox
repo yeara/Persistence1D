@@ -69,13 +69,25 @@ of paired extrema whose persistence is greater than threshold
 @param[in] threshold 			Persistence threshold for filtering
 @param[out] filtered_pairs		Returns a matrix with all pairs whose persistence > threshold.
 
+\subsection get_min get_min_indices(pairs) 
+Returns a vector with the indices of paired minima in a pairs matrix.
+
+@param[in] pairs		Paired extrema matrix, as per filter_features_by_persistence output. 
+@param[out] idx			Vector with minima indices.
+
+\subsection get_min get_max_indices(pairs) 
+Returns a vector with the indices of paired maxima in a pairs matrix.
+
+@param[in] pairs		Paired extrema matrix, , as per filter_features_by_persistence output. 
+@param[out] idx			Vector with maxima indices.
+
  */
 
 
 /*! \example persistence1d_example.m
 
    Demonstrates how to use the Persistence1D class in Matlab.
-   This example demonstates the following:
+   This example demonstrates the following:
    1. Compiling run_persistence1d
    2. Input and output parameters and formats for run_persistence1d
    3. C++/Matlab interface function calling convention
