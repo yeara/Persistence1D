@@ -26,19 +26,19 @@ DOXYFILE_ENCODING      = UTF-8
 # identify the project. Note that if you do not use Doxywizard you need 
 # to put quotes around the project name if it contains spaces.
 
-PROJECT_NAME           = Persistence1D
+PROJECT_NAME           = "Persistence 1D inc. Reconstruct1D"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. 
 # This could be handy for archiving the generated documentation or 
 # if some version control system is used.
 
-PROJECT_NUMBER         = 1.0
+PROJECT_NUMBER         = 1.1
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description 
 # for a project that appears at the top of each page and should give viewer 
 # a quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Finding extrema in one dimensional data and filtering them by persistence."
+PROJECT_BRIEF          = "Finding extrema in one dimensional data, filtering them by persistence and reconstructing smooth functions"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is 
 # included in the documentation. The maximum height of the logo should not 
@@ -679,7 +679,8 @@ WARN_LOGFILE           =
 
 INPUT                  = ../src \
                          ../matlab \
-                         ../doc
+                         ../doc \
+                         ../reconstruct1d
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
@@ -772,7 +773,8 @@ EXCLUDE_SYMBOLS        =
 # the \include command).
 
 EXAMPLE_PATH           = ../src/examples/ \
-                        ../matlab/
+                         ../matlab/ \
+                         ../reconstruct1d/examples/
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the 
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp 

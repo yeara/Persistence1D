@@ -91,4 +91,18 @@ it will be paired with the minimum to the right.
 
 Note that due to our interpretation of the data, local maxima cannot appear at the domain edges.
 
+# Reconstruct1D
+
+\image html threshold_animation.gif
+
+\image html data_weights_animation.gif
+
+Reconstruct1D is an extension of Persistence1D, for reconstructing smooth functions based on persistent features in noisy data.
+
+Reconstruct1D is written in Matlab and relies on Matlab's optimizers to reconstruct smooth functions which approximate the original data. 
+
+It is recommended to use MOSEK optimizers. 
+
+Check \link Reconstruct1d_Main Reconstruct1D documentation \endlink for detailed documentation and examples.
+
 */

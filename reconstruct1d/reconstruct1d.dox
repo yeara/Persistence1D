@@ -1,0 +1,161 @@
+/*!\page Reconstruct1d_Main Reconstruct1D for Persistence1D
+
+Reconsturct1D is a class for reconstructing smooth functions based on 
+persistence features in one dimensional data. Persistent features can be used to 
+reconstruct a C1 or C2 smooth function which is similar to the original data. 
+
+The class can be used with Matlab's built-in quadprog solver, but we recommend to 
+use the MOSEK solvers package which is faster.
+
+The class relies on Persistence1D main package and its output format. 
+
+\section purpose Purpose
+The class is used to reconstruct a smooth function which is similar to the input data. 
+The reconstruction process guarantees:
+
+- Persistent extrema points location and value are preserved. 
+- No new extrema points are created.  
+- The reconstructed function is C1 or C2 smooth, according to the user's choice.
+
+\section usage Usage
+To reconstruct a smooth function, the algorithm does the following: 
+
+-# Use Persistence1d to find features 
+-# Choose threshold for surviving features.
+-# Build equality, inequality and monotonicity constraints.
+-# Solve the optimization problems.
+
+
+Interaction with Reconstruct1D can be done in two different ways: 
+- Call Reconstruct1D with a data vector, threshold values and smoothness type. Reconstruct1D 
+will run Persistence1D, filter the result and return a reconstructed data vector. Using this method, 
+reconstructing the function with different parameters will re-run Persistence1D every function call. 
+
+- Call Persistence1D once, and call Reconstruct1D with filtered results and smoothness to reconstruct
+a function. The function can be reconstructed many times without re-running Persistence1D. 
+ 
+The data about the location of persistent features is being used to create equality 
+and inequality constraints for the entire data domain. The reconstructed function 
+will have biharmonic or triharmonic solution, i.e. C1 or C2 smoothness. 
+
+Please check the \ref exm section and Reconstruct1D\\Examples folder.
+
+\section mosek MOSEK Solvers
+It is highly recommended to install and use MOSEK with this package, as Matlab's quadprog 
+solver is slow. Download MOSEK [http://www.mosek.com/] and install it. It is possible 
+to use it with a free academic license or with a trial license. Your Matlab installation, 
+operating system and MOSEK architecture should all match.  
+
+
+Reconstruct1D includes two files to turn MOSEK on and off, but they might require
+adjustments based on your system settings. 
+
+turn_on_mosek - use this to turn on MOSEK optimizers before calling Reconstruct1d. 
+Adds MOSEK to Matlab's path.
+
+
+turn_off_mosek - turns off MOSEK solvers, be removing it from Matlab's path. 
+
+
+
+<b> Before first use, open turn_on_mosek.m and turn_off_mosek.m to configure your MOSEK installation path. </b>
+
+
+
+\section exm Examples
+Reconstruct1d\\examples folder contains: 
+- \ref Reconstruct1d_basic_example.m - simple example for usage of Reconstruct1D.
+- \ref Reconstruct1d_advanced_example.m - example of slightly more efficient usage of Reconstruct1D.
+- \ref Reconstruct1d_data_weights.m - example of data weights affect on reconstruction.
+
+\section Functions
+\subsection inter Interface Functions
+### reconstruct1d.m
+- Main function for reconstruction. Calls Persistence1D, filters the results and reconstructs a smooth functions based on user set parameters. 
+
+### reconstruct1d_with_persistence_res.m
+- Secondary function for reconstruction. Allows reconstruction based on Persistence1D 
+results manually generated and filtered by the user.
+
+### setup_persistence1d.m
+- The scripts adds Persistence1D folders to path, and verifies that 
+Persistence1D is compiled for Matlab usage.
+
+### turn_off_mosek.m
+- The script removes MOSEK directory from path. Matlab optimizers will be used 
+from this point on.
+- The user needs to set the choose the MOSEK installation directory when using the script for the first time.
+
+### turn_on_mosek.m
+- The script adds the MOSEK directory to path, thus overriding Matlab's solvers.
+
+### plot_reconstructed_data.m
+-  Creates a plot of the original and reconstructed data, adds title with
+reconstruction parameters.
+
+\subsection internal Internal Functions
+### build_equality_constraints.m
+- For internal use - builds equality constraints matrix and vector for quadprog.
+
+### build_inequality_constraints.m
+- For internal use - builds inequality constraints matrix and vector for quadprog.
+
+### build_laplacian.m
+- For internal use - creates a discrete Laplacian operator matrix for quadprog.s
+
+### build_monotonicity_graph.m
+- For internal use - creates a monotonicity matrix for quadprog. This ensures localization of extrema.
+
+
+
+*/
+
+/*! \example Reconstruct1d_basic_example.m
+   
+   # Contents
+   
+   Basic usage of Reconstruct1D. 
+   Demonstrates how to reconstruct a smooth function from noisy data in
+   one line of code.
+   
+   # Example Output
+   
+   \image html basic_example_output.png
+
+   # Code Documentation
+*/
+
+
+/*! \example Reconstruct1d_advanced_example.m
+   # Contents
+      
+   Demonstrates advanced usage of Reconstruct1D.
+   Shows how the user can manually call Persistence1D and filter the results
+   manually, then create reconstruction with different parameters.
+   
+   # Example Output
+   \image html advanced_example_output.png
+
+    # Code Documentation
+*/
+
+
+/*! \example Reconstruct1d_data_weights.m
+
+   Demonstrates how to data term weights affect the reconstructed results. 
+   
+   # Contents
+	This example demonstrates how the data term weight affects the 
+	results of Reconstruct1D. 
+	
+	For data weight = 1.0 results will be almost exactly the  data vector.
+	Data term weights of around 10^-6 reconstruct smoother functions.
+   
+   # Example Output
+   
+   \image html data_weights_example_1.png
+   \image html data_weights_example_2.png  
+      
+  
+    # Code Documentation
+*/
