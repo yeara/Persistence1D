@@ -130,8 +130,7 @@ public:
 		Data = InputData; 
 		Init();
 
-		//Changed order of commands. If a user runs this on an empty vector 
-		//without checking, they should not get previous run's results.
+		//If a user runs this on an empty vector, then they should not get the results of the previous run.
 		if (Data.empty()) return false;
 
 		CreateIndexValueVector();
